@@ -1,11 +1,9 @@
 import React from 'react';
-import Nav from "../components/Nav";
 
 export default function HomePage() {
     return (
-        <div>
-            <Nav />
-            Home page
-        </div>
+        <>
+            Home page content passed as children
+        </>
     )
 }

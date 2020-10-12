@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, navigate, navigation } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 
 // how to programatically navigate to slicemasters, replace true adds it to browser history
 // function goToSlicers() {
