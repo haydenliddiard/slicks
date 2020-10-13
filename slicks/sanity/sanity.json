@@ -1,8 +1,8 @@
 {
   "root": true,
   "api": {
-    "projectId": "kutp3su7",
-    "dataset": "production"
+    "projectId": "romuqopg",
+    "dataset": "slicks"
   },
   "project": {
     "name": "slicks-slices"
