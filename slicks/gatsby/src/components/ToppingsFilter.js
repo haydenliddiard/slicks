@@ -26,6 +26,7 @@ const ToppingStyles = styled.div`
 `;
 
 function countPizzasInToppings(pizzas) {
+    // Return the pizzas with counts
     const counts = pizzas
     .map(pizza => pizza.toppings)
     .flat()
@@ -48,11 +49,13 @@ function countPizzasInToppings(pizzas) {
             return acc;
     }, {});
     // sort them based on their count
-    const sortedToppings = Object.values(counts).sort((a, b) => b.count - a.count);
+    const sortedToppings = Object.values(counts).sort(
+        (a, b) => b.count - a.count
+        );
     return sortedToppings
 }
 
-export default function ToppingsFilter() {
+export default function ToppingsFilter({ activeTopping }) {
     // get list of all the toppings
     // get list of all pissaz
     const { toppings, pizzas } = useStaticQuery(graphql`
@@ -74,7 +77,7 @@ export default function ToppingsFilter() {
            }
         }
     `);
-    console.clear()
+    
     // count how many pizzas are in each topping
     const toppingsWithCount = countPizzasInToppings(pizzas.nodes)
     console.log(toppingsWithCount)
@@ -82,14 +85,21 @@ export default function ToppingsFilter() {
     // link it up
     return (
         <ToppingStyles>
-        <p>toppings</p>
+        <Link to="/pizzas">
+        <span className="name">All</span>
+        <span className="count">{pizzas.nodes.length}</span>
+        </Link>
         {
-        toppingsWithCount.map(topping => 
-        <Link to={`/topping/${topping.name}`} key={topping.id}>
+        toppingsWithCount.map(topping => (
+        <Link 
+            to={`/topping/${topping.name}`} 
+            key={topping.id}
+            className={topping.name === activeTopping ? 'active' : ''}
+        >
             <span  className='name' >{topping.name}</span>
             <span className="count">{topping.count}</span>
             </Link>
-        )}
+        ))}
     </ToppingStyles>
     )
 }
