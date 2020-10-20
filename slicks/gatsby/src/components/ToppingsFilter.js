@@ -31,14 +31,13 @@ function countPizzasInToppings(pizzas) {
     .map(pizza => pizza.toppings)
     .flat()
     .reduce((acc, topping) => {
-        // check if its existing topping
+        // check if its an existing topping
         const existingTopping = acc[topping.id];
         if(existingTopping) {
             // if it is incriment by 1
             existingTopping.count += 1;
         }
         else {
-
             // otherwise add a new entry
             acc[topping.id] = {
                 id: topping.id,
