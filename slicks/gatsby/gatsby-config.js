@@ -2,9 +2,6 @@ import dotenv from 'dotenv'
 
 dotenv.config({ path: '.env' });
 
-// never do this on build, only for test
-// console.log(process.env.SANITY_TOKEN)
-
 export default {
     siteMetadata: {
         title: `Slicks Slices`,

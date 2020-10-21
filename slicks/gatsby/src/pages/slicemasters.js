@@ -36,27 +36,25 @@ const SlicemasterStyles = styled.div`
   }
 `;
 
-export default function slicemastersPage({ data }) {
-    const slicemasters = data.slicemasters.nodes;
-    return (
-        <>
-        <p>{process.env.GATSBY_PAGE_SIZE}</p>
-        <p>{process.env.SANITY_TOKEN}</p>
-            <SlicemasterGrid>
-                {slicemasters.map((person) => (
-                    <SlicemasterStyles>
-                        <Link to={`/slicemasters/${person.slug.current}`}>
-                            <h2>
-                            <span className="mark">{person.name}</span>
-                            </h2>
-                        </Link>
-                        <Img fluid={person.image.asset.fluid} />
-                        <p className="description">{person.description}</p>
-                    </SlicemasterStyles>
-                ))}
-            </SlicemasterGrid>
-        </>
-    )
+export default function SlicemastersPage({ data }) {
+  const slicemasters = data.slicemasters.nodes;
+  return (
+    <>
+      <SlicemasterGrid>
+        {slicemasters.map((person) => (
+          <SlicemasterStyles>
+            <Link to={`/slicemaster/${person.slug.current}`}>
+              <h2>
+                <span className="mark">{person.name}</span>
+              </h2>
+            </Link>
+            <Img fluid={person.image.asset.fluid} />
+            <p className="description">{person.description}</p>
+          </SlicemasterStyles>
+        ))}
+      </SlicemasterGrid>
+    </>
+  );
 }
 
 export const query = graphql`
