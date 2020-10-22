@@ -42,7 +42,7 @@ export default function Pagination({
     const hasPrevPage = prevPage >= 1;
     return (
         <PaginationStyles>
-        <Link disabled={!hasPrevPage}>
+        <Link disabled={!hasPrevPage} to={`${base}/${prevPage}`}>
         ← Prev
         </Link>
         {/* "_" empty placeholder in .map */}
