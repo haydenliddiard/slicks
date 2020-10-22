@@ -18,7 +18,6 @@ export default {
             dataset: 'slicks',
             watchMode: true,
             token: process.env.SANITY_TOKEN,
-            
         }
     }
    ], 

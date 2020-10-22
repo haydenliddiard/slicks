@@ -40,9 +40,11 @@ export default function SlicemastersPage({ data }) {
   const slicemasters = data.slicemasters.nodes;
   return (
     <>
+    <p>{process.env.GATSBY_PAGE_SIZE}</p>
+      <p>{process.env.SANITY_TOKEN}</p>
       <SlicemasterGrid>
         {slicemasters.map((person) => (
-          <SlicemasterStyles>
+          <SlicemasterStyles key={person.name}>
             <Link to={`/slicemaster/${person.slug.current}`}>
               <h2>
                 <span className="mark">{person.name}</span>
@@ -58,8 +60,8 @@ export default function SlicemastersPage({ data }) {
 }
 
 export const query = graphql`
-  query {
-    slicemasters: allSanityPerson {
+  query($skip: Int = 0, $pageSize: Int = 2) {
+    slicemasters: allSanityPerson(limit: $pageSize, skip: $skip) {
       totalCount
       nodes {
         name
