@@ -22,7 +22,7 @@ const NavStyles = styled.nav`
         padding: 0;
         text-align: center;
         list-style: none;
-
+        margin-left: -.75em;
         display: grid;
         grid-template-columns: 1fr 1fr auto 1fr 1fr;
         grid-gap: 2rem;
@@ -46,12 +46,16 @@ const NavStyles = styled.nav`
             --rotate: 3deg;
         }
     }
+    @media (min-width: 600px) {
+        a {
+            font-size: 2rem;
+            text-decoration: none;
+            &:hover {
+                color: var(--red);
+            }
+    }
     a {
         font-size: 3rem;
-        text-decoration: none;
-        &:hover {
-            color: var(--red);
-        }
         // current page
     //   &[aria-current="page"]  {
     //       color: var(--red);
@@ -66,7 +70,7 @@ export default function Nav() {
                 <li><Link to="/">Hot Now</Link></li>
                 <li><Link to="/pizzas">Pizza Menu</Link></li>
                 <li><Link to="/"><Logo /></Link></li>
-                <li><Link to="/slicemasters">slicemasters</Link></li>
+                <li><Link to="/slicemasters">slice<br/>masters</Link></li>
                 <li><Link to="/order">Order Ahead</Link></li>
                 {/* <li><a href="/beers">Beers</a></li> */}
                 {/* <li>
