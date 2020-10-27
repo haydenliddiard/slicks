@@ -6,13 +6,13 @@ export default function usePizza({ pizzas, inputs }) {
     // 2. Make a function add things to order
     // ordered pizza is pizza.id, pizza size
     function addToOrder(orderedPizza) {
-        console.log(orderedPizza);
+        // console.log(orderedPizza);
         setOrder([...order,
             orderedPizza]);
         }
         // 3. Make a function remove things from order
         function removeFromOrder(index) {
-            console.log('removing pizza order');
+            // console.log('removing pizza order');
         setOrder([
             // everything before
             ...order.slice(0, index),
