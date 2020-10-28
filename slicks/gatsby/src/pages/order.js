@@ -61,6 +61,7 @@ export default function OrderPage({ data }) {
                 {['S', 'M', 'L'].map((size) => (
                   <button
                     type="button"
+                    key={size}
                     onClick={() =>
                       addToOrder({
                         id: pizza.id,
@@ -84,11 +85,10 @@ export default function OrderPage({ data }) {
           />
         </fieldset>
         <fieldset>
-          {/* added in 38 */}
           <h3>
-            YourTotal is {formatMoney(calculateOrderTotal(order, pizzas))}
+            Your Total is {formatMoney(calculateOrderTotal(order, pizzas))}
           </h3>
-            <button type="submit">Order Ahead</button>
+          <button type="submit">Order Ahead</button>
         </fieldset>
       </OrderStyles>
     </>

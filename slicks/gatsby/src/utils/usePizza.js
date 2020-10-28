@@ -1,24 +1,26 @@
-import { useState }  from 'react';
+import { useState, useContext }  from 'react';
+import OrderContext from '../components/OrderContext';
+
 // passed into order.js
 export default function usePizza({ pizzas, inputs }) {
     // 1. create some state to hold our order
-    const [order, setOrder] = useState([]);
+    // We got rid of this line because we moved useState up to the provider
+    // const [order, setOrder] = useState([]);
+    // now we access both our state and our updater function(setOrder) via contaxt
+    const [order, setOrder] = useContext(OrderContext);
     // 2. Make a function add things to order
-    // ordered pizza is pizza.id, pizza size
     function addToOrder(orderedPizza) {
-        // console.log(orderedPizza);
-        setOrder([...order,
-            orderedPizza]);
-        }
-        // 3. Make a function remove things from order
-        function removeFromOrder(index) {
-            // console.log('removing pizza order');
+        // ordered = pizza.id, pizza.size
+        setOrder([...order, orderedPizza]);
+    }
+    //  3. Make a function remove things from order
+    function removeFromOrder(index) {
         setOrder([
-            // everything before
+            // everthing before the item we want to remove
             ...order.slice(0, index),
             // everything after
-            ...order.slice(index + 1),
-        ])
+            ...order.slice(index + 1 ),
+        ]);
     }
     // 4. send this data the a serverless function when they check out
     // TODO
