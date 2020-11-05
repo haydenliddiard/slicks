@@ -19,7 +19,7 @@ const ToppingStyles = styled.div`
             background: white;
             padding: 2px 5px;
         }
-        .active {
+        &[aria-current='page'] {
             background: var(--yellow);
         }
     }
@@ -57,7 +57,7 @@ function countPizzasInToppings(pizzas) {
 }
 
 export default function ToppingsFilter({ activeTopping }) {
-    // get list of all the toppings
+    // get list of all the toppings/ can comment out
     // get list of all pissaz
     const { toppings, pizzas } = useStaticQuery(graphql`
         query {

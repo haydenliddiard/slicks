@@ -27,7 +27,7 @@ const SingleBeerStyles = styled.div`
 export default function BeersPage({ data }) {
     return (
       <>
-      <SEO title={`Beers! We have ${data.beers.nodes.length}`} 
+      <SEO title={`Beers! We have ${data.beers.nodes.length} in stock`} 
       />
         <h2 className="center">
           We have {data.beers.nodes.length} Beers Available. Dine in Only!

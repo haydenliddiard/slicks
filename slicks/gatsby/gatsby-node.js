@@ -67,6 +67,7 @@ async function fetchBeersAndTurnIntoNodes({
   // 1. Fetch a  list of beers
   const res = await fetch('https://sampleapis.com/beers/api/ale');
   const beers = await res.json();
+  // console.log(beers);
   // 2. Loop over each one
   for (const beer of beers) {
     // create a node for each beer
@@ -110,7 +111,7 @@ async function turnSlicemastersIntoPages({ graphql, actions}) {
       component: resolve('./src/templates/Slicemaster.js'),
       path: `/slicemaster/${slicemaster.slug.current}`,
       context: {
-        name:slicemaster.person,
+        name: slicemaster.person,
         slug: slicemaster.slug.current,
       },
     });
@@ -125,7 +126,7 @@ async function turnSlicemastersIntoPages({ graphql, actions}) {
 
   // 4. Loop from 1 to n and create the pages for them
   Array.from({ length: pageCount}).forEach((_, i) => {
-    console.log(`create page ${i}`);
+    // console.log(`create page ${i}`);
     actions.createPage({
       path: `slicemasters/${i + 1}`,
       component: path.resolve('./src/pages/slicemasters.js'),
