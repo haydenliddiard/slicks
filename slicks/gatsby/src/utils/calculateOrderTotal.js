@@ -1,14 +1,13 @@
 import calculatePizzaPrice from './calculatePizzaPrice';
 
 export default function calculateOrderTotal(order, pizzas) {
+    // loop over each item in the order
     return order.reduce((runningTotal, singleOrder) => {
         const pizza = pizzas.find(
-            // find first pizza where singlePizza.id = single order.id
-            (singlePizza) => singlePizza.id === singleOrder.id
-        );
-        console.log(`${pizza.name} prizza price ${pizza.price} single order size ${singleOrder.size}`)
-        return runningTotal + calculatePizzaPrice
-        (pizza.price, singleOrder.size);
-        // 0 is initial value
+            singlePizza => singlePizza.id === singleOrder.id
+            );
+        return runningTotal + calculatePizzaPrice(pizza.price, singleOrder.size);
     }, 0);
+    // calc the total for the pizza
+    // add that total to the running total
 }

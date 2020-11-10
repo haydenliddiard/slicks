@@ -4,14 +4,16 @@ import OrderContext from '../components/OrderContext';
 // passed into order.js
 export default function usePizza({ pizzas, inputs }) {
     // 1. create some state to hold our order
-    // We got rid of this line because we moved useState up to the provider
+    // useState moved up to the orderContext
     // const [order, setOrder] = useState([]);
-    // now we access both our state and our updater function(setOrder) via contaxt
+    // now we access both our state and our updater function(setOrder) via context
     const [order, setOrder] = useContext(OrderContext);
     // 2. Make a function add things to order
     function addToOrder(orderedPizza) {
         // ordered = pizza.id, pizza.size
+        // spread order into array with orderesPizza
         setOrder([...order, orderedPizza]);
+        // console.log(orderedPizza);
     }
     //  3. Make a function remove things from order
     function removeFromOrder(index) {
