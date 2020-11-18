@@ -90,7 +90,7 @@ export default function OrderPage({ data }) {
             <legend>Order</legend>
             <PizzaOrder order={order} removeFromOrder={removeFromOrder} pizzas={pizzas} />
           </fieldset>
-          <feildset>
+          <fieldset>
                 <h3>your order total is {formatMoney(calculateOrderTotal(order, pizzas))}</h3>
                 <div>
                 {error ? <p>Error: {error} </p> : '' }
@@ -101,7 +101,7 @@ export default function OrderPage({ data }) {
             >
               {loading ? 'Placing Order...' : 'Order Ahead'}
             </button>
-          </feildset>
+          </fieldset>
         </OrderStyles>
     </>
   )
