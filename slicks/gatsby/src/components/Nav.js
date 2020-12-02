@@ -13,7 +13,7 @@ import Logo from './Logo';
 // need to fix anchortag fs at small screen
 
 const NavStyles = styled.nav`
-    margin-bottom: 3rem;
+    // margin-bottom: 3rem;
     .logo {
         transform: translateY(-25%);
     }
