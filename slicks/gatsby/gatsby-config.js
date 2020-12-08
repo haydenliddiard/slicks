@@ -3,6 +3,10 @@ import dotenv from 'dotenv';
 dotenv.config({ path: '.env' });
 
 export default {
+    // path prefix is for hosting on regular server
+    // 1. also need to npm run build -- --prefix-paths
+    // 2. add your website/pizza (or whatever prefix) to sanity.io cors config
+    // pathPrefix: '/pizza',
     siteMetadata: {
         title: `Slicks Slices`,
         siteUrl: 'https://gatsby-pizza',

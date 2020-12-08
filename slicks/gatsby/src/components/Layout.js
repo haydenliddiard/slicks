@@ -38,7 +38,7 @@ export default function Layout({children}) {
                 <ContentStyles>
                     <Nav />
                     {children}
-                    <p>i am Layout component content</p>
+                    {/* <p>i am Layout component content</p> */}
                     <Footer />
                 </ContentStyles>
             </SiteBorderStyles>

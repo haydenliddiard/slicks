@@ -4,7 +4,6 @@ import LoadingGrid from '../components/LoadingGrid';
 import { HomePageGrid } from '../styles/Grids';
 import ItemGrid from '../components/ItemGrid';
 // sannity graphql
-//https://romuqopg.api.sanity.io/v1/graphql/production/default
 
 function CurrentlySlicing({ slicemasters }) {
     // console.log(slicemasters);

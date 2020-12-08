@@ -15,6 +15,8 @@ const ToppingStyles = styled.div`
         padding: 5px;
         background: var(--grey);
         border-radius: 2px;
+        text-decoration: none;
+        font-size: clamp(1.5rem, 1.5vh, 2.5rem);
         .count {
             background: white;
             padding: 2px 5px;
@@ -34,13 +36,11 @@ function countPizzasInToppings(pizzas) {
         // check if its an existing topping
         const existingTopping = acc[topping.id];
         if(existingTopping) {
-            console.log('Existing Topping', existingTopping.name);
             // if it exists incriment by 1
             existingTopping.count += 1;
         }
         else {
             // otherwise add a new entry
-            console.log('New Topping', topping.name);
             acc[topping.id] = {
                 id: topping.id,
                 name: topping.name,
