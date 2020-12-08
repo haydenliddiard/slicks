@@ -25,29 +25,29 @@ const PaginationStyles = styled.div`
       color: var(--grey);
     }
   }
-      @media (max-width: 800px) {
-        .word{
-          display: none;
-        }
-        font-size: 1.4rem;
-      }
+  @media (max-width: 800px) {
+    .word {
+      display: none;
+    }
+    font-size: 1.4rem;
+  }
 `;
 
 export default function Pagination({
-    pageSize,
-    totalCount,
-    currentPage,
-    skip,
-    base,
+  pageSize,
+  totalCount,
+  currentPage,
+  skip,
+  base,
 }) {
-    // make some variables
-    const totalPages = Math.ceil(totalCount / pageSize);
-    const prevPage = currentPage - 1;
-    const nextPage = currentPage + 1;
-    const hasNextPage = nextPage <= totalPages;
-    const hasPrevPage = prevPage >= 1;
-    return (
-      <PaginationStyles>
+  // make some variables
+  const totalPages = Math.ceil(totalCount / pageSize);
+  const prevPage = currentPage - 1;
+  const nextPage = currentPage + 1;
+  const hasNextPage = nextPage <= totalPages;
+  const hasPrevPage = prevPage >= 1;
+  return (
+    <PaginationStyles>
       <Link
         title="Prev Page"
         disabled={!hasPrevPage}
@@ -72,6 +72,5 @@ export default function Pagination({
         <span className="word">Next</span> →
       </Link>
     </PaginationStyles>
-    )
-    
+  );
 }
